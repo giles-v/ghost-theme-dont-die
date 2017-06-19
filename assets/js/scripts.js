@@ -12,39 +12,12 @@ jQuery.noConflict();
 	$(window).load(function() {
 	"use strict";
 
-				//
-        // Full Width Insert
-        //
-        var makeInsert =function () {
-            $("article img").each(function () {
-
-            	var insertAlt = $(this).attr('alt');
-
-            	if ( insertAlt === 'Insert' ) {
-
-            		var parentClass = $(this).parent().attr('class');
-
-            		if ( parentClass !== "mt-insert" ) {
-
-            			$(this).wrap('<figure class="mt-insert" />');
-
-            		}
-
-            		var insertImage = $(this).height();
-
-            		$(this).parent().css( "min-height" , insertImage );
-
-
-            	}
-
-
-            });
-        };
-        makeInsert();
-
-				jQuery(window).resize(function () {
-					makeInsert();
-				});
+		jQuery(window).resize(function () {
+			$(".mt-insert img").each(function () {
+				var insertImage = $(this).height();
+				$(this).parent().css( "min-height" , insertImage);
+			});
+		}).resize();
 
 
 		// Detect height of first article then remove position fixed from top article on archive
@@ -250,6 +223,19 @@ jQuery.noConflict();
     	// Add a class so we know JavaScript is supported
     	//
     	$('html').addClass("js").removeClass("no-js");
+
+    	// convert images to figures
+    	$("article p > img[alt='Insert']").wrap('<figure class="mt-insert" />');
+
+    	var glitchables = glitchjpeg.attachTo('.mt-insert img');
+			function reglitch() {
+				for (var i = 0; i < glitchables.length; i++) {
+					var img = glitchables[i];
+					glitchjpeg.apply(img, 80);
+				}
+				requestAnimationFrame(reglitch);
+			}
+			glitchables.length > 0 && reglitch();
 
 			// Get Current Width
 			var currWidth = $(window).width();

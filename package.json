@@ -16,7 +16,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:css": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css"
+    "build:css": "lessc assets/less/style.less --source-map=assets/css/style.css.map assets/css/style.css",
+    "build:cleancss": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css"
   },
   "config": {
     "posts_per_page": 10
