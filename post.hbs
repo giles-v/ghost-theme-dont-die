@@ -3,61 +3,81 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+
+
 <section class="main">
-  <article class="{{post_class}}">
+
+    <article class="{{post_class}}">
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
+
     <div class="post-top">
+
       {{#if image}}
+
         <span class="featured-image"><img src="{{image}}" alt="{{title}}" /></span>
+
       {{else}}
+
         <span class="featured-image not-post-image">{{content words="0"}}</span>
+
       {{/if}}
 
-      <div class="post-align post-header">
-        <div class="post-header-inner">
-          <ul class="meta top">
-            <li class="time">
-              <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">
-                {{date format="MMMM DD, YYYY"}}
-              </time>
-            </li>
-          </ul>
+    <div class="post-align post-header">
+			<div class="post-header-inner">
+				<ul class="meta top">
+		      <li class="time">
+			     <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time></li>
+	    </ul>
+			<h1 class="entry-title post-title font-effect-anaglyph" data-text="{{{title}}}">{{title}}</h1>
+		<ul class="meta">
+  		<li class="author-meta post-tags">
 
-          <h1 class="entry-title post-title font-effect-anaglyph" data-text="{{{title}}}">
-            {{title}}
-          </h1>
-
-          <ul class="meta">
-            <li class="author-meta post-tags"></li>
-          </ul>
-        </div><!-- /post-header-inner -->
-      </div><!-- /post-header -->
-    </div><!-- /post-top -->
-
-    <div class="post-after-header">
-      {{>post-social-share}}
-    </div>
-
-    <div class="inner post-inner">
-      {{content}}
-
-      <a class="bug" href="{{@blog.url}}">
-        <img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
-      </a>
+  		</li>
+	  </ul>
+		</div><!-- /post-header-inner -->
+		</div><!-- /post-header -->
+	</div><!-- /post-top -->
 
 
-      {{! Everything inside the #author tags pulls data from the author }}
-      {{#author}}
-      <div class="author-wrap"></div>
-      {{/author}}
-    </div> <!-- post-inner -->
+        <div class="inner post-inner">
+            {{content}}
+              <a class="bug" href="{{@blog.url}}"><img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+
+              <!--
+              <div class="meta-hold">
+
+              {{#if tags}}
+                <ul class="meta bottom">
+                    <li class="tag post-tags">{{tags separator=" | " prefix="Tagged in:"}}</li>
+                </ul>
+              {{/if}}
+
+
+            </div>
+
+-->
+
+
+{{! Everything inside the #author tags pulls data from the author }}
+{{#author}}
+
+<div class="author-wrap">
+  
+</div>
+
+{{/author}}
+
+
+
+</div> <!-- post-inner -->
 
 
 
     {{/post}}
-  </article>
+    </article>
+
 </section>
 
-{{>after-post}}
+{{>disqus}}

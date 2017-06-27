@@ -630,84 +630,9 @@ footer {
   width: 30px;
 }
 
-.post-template {
-  .main {
-    .author-meta {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  .social-share {
-    position: absolute;
-    left: 40px;
-    top: 530px;
-
-    ul {
-      position: sticky;
-      top: 40px;
-    }
-
-    li {
-      display: block;
-      margin-top: .1em;
-      :first-child {
-        margin-top: 0;
-      }
-    }
-
-    a {
-    }
-  }
-}
-
-.social-share {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0;
-  }
-
-  a {
-    display: block;
-    width: 48px;
-    height: 48px;
-    background-color: #999;
-    transition: background-color .2s;
-    cursor: pointer;
-  }
-
-  .twitter {
-    &:hover { background-color: #1da1f2 };
-  }
-  .facebook {
-    &:hover { background-color: #3b5998 };
-  }
-  .pocket {
-    &:hover { background-color: #ee4056 };
-  }
-  .instapaper {
-    &:hover { background-color: #000000 };
-  }
-
-  .icon-wrapper {
-    display: block;
-    padding: 8px 0;
-  }
-  svg {
-    display: block;
-    width: 32px;
-    height: 32px;
-    margin: 0 auto;
-    path {
-      fill: #fff;
-    }
-  }
+.post-template .main .author-meta {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .VHS{
@@ -1990,11 +1915,15 @@ a.social.first {
   @include textGlitch("don't die", 17, white, black, red, blue, 450, 115);
 }
 
-.visually-hidden {
-  pointer-events: none;
-  position: absolute;
-  clip: rect(1px,1px,1px,1px);
-  padding: 0;
-  border: 0;
-  overflow: hidden;
+.social-icon{
+  letter-spacing: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
+
+/*
+.glitch
+{
+  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
+}
+*/
