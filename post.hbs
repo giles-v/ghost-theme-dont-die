@@ -36,22 +36,18 @@
       </div><!-- /post-header -->
     </div><!-- /post-top -->
 
-    <div class="post-after-header">
-      {{>post-social-share}}
-    </div>
-
     <div class="inner post-inner">
-      {{content}}
+      <div class="post-after-header">
+        {{>post-social-share}}
+      </div>
+
+      <div class="content">
+        {{content}}
+      </div>
 
       <a class="bug" href="{{@blog.url}}">
         <img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
       </a>
-
-
-      {{! Everything inside the #author tags pulls data from the author }}
-      {{#author}}
-      <div class="author-wrap"></div>
-      {{/author}}
     </div> <!-- post-inner -->
 
 
