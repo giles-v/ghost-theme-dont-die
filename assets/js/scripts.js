@@ -13,34 +13,34 @@ jQuery.noConflict();
 	"use strict";
 
 				//
-        // Full Width Insert
-        //
-        var makeInsert =function () {
-            $("article img").each(function () {
+		// Full Width Insert
+		//
+		var makeInsert =function () {
+			$("article img").each(function () {
 
-            	var insertAlt = $(this).attr('alt');
+				var insertAlt = $(this).attr('alt');
 
-            	if ( insertAlt === 'Insert' ) {
+				if ( insertAlt === 'Insert' ) {
 
-            		var parentClass = $(this).parent().attr('class');
+					var parentClass = $(this).parent().attr('class');
 
-            		if ( parentClass !== "mt-insert" ) {
+					if ( parentClass !== "mt-insert" ) {
 
-            			$(this).wrap('<figure class="mt-insert" />');
+						$(this).wrap('<figure class="mt-insert" />');
 
-            		}
+					}
 
-            		var insertImage = $(this).height();
+					var insertImage = $(this).height();
 
-            		$(this).parent().css( "min-height" , insertImage );
-
-
-            	}
+					$(this).parent().css( "min-height" , insertImage );
 
 
-            });
-        };
-        makeInsert();
+				}
+
+
+			});
+		};
+		makeInsert();
 
 				jQuery(window).resize(function () {
 					makeInsert();
@@ -244,12 +244,12 @@ jQuery.noConflict();
 	// Doc ready scripts
 	//
 
-    $(document).ready(function() {
+	$(document).ready(function() {
 			"use strict";
-    	//
-    	// Add a class so we know JavaScript is supported
-    	//
-    	$('html').addClass("js").removeClass("no-js");
+		//
+		// Add a class so we know JavaScript is supported
+		//
+		$('html').addClass("js").removeClass("no-js");
 
 			// Get Current Width
 			var currWidth = $(window).width();
@@ -274,13 +274,13 @@ jQuery.noConflict();
 						if ( currWidth >= 640 ) {
 
 							$(window).scroll(function() {
-					      if ($(this).scrollTop() > 40) {
-					        $('.home-inner').stop().animate({opacity: 0}, 100);
-					      }
-					      if ($(this).scrollTop() < 30) {
-					       	$('.home-inner').stop().animate({opacity: 1}, 200);
-					      }
-					    });
+						  if ($(this).scrollTop() > 40) {
+							$('.home-inner').stop().animate({opacity: 0}, 100);
+						  }
+						  if ($(this).scrollTop() < 30) {
+						   	$('.home-inner').stop().animate({opacity: 1}, 200);
+						  }
+						});
 
 						}
 
@@ -400,10 +400,10 @@ jQuery.noConflict();
 				}
 
 
-        //
-        //  FitVids
-        //
-        $(".format-video").fitVids();
+		//
+		//  FitVids
+		//
+		$(".format-video").fitVids();
 
 
 
@@ -481,8 +481,31 @@ jQuery.noConflict();
 				}
 
 
+				$(".social-share a").click(function(event) {
+					var el = $(this);
+					PopupCenter(el.attr("href"), el.find(".visually-hidden").text(), 600, 300);
+					event.preventDefault();
+				});
 
-    }); // end document.ready
 
+	}); // end document.ready
+
+	function PopupCenter(url, title, w, h) {
+		// Fixes dual-screen position						 Most browsers	  Firefox
+		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+		var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+		var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+		var top = ((height / 2) - (h / 2)) + dualScreenTop;
+		var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+		// Puts focus on the newWindow
+		if (window.focus) {
+			newWindow.focus();
+		}
+	}
 
 })(jQuery);
