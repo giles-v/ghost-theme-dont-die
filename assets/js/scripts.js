@@ -487,6 +487,7 @@ jQuery.noConflict();
 					event.preventDefault();
 				});
 
+				$('.post-inner .content').selectionSharer();
 
 	}); // end document.ready
 
