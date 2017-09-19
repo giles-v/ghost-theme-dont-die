@@ -630,9 +630,80 @@ footer {
   width: 30px;
 }
 
-.post-template .main .author-meta {
-  margin-top: 0;
-  margin-bottom: 0;
+.post-template {
+  .main {
+    .author-meta {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .post-after-header {
+    position: relative;
+    position: sticky;
+    top: 40px;
+    left: 0;
+    height: 200px;
+    width: 0;
+    float: left;
+  }
+
+  .social-share {
+    position: absolute;
+    left: -130px;
+    top: 0;
+    padding: 0 40px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: block;
+        margin-top: .1em;
+        :first-child {
+          margin-top: 0;
+        }
+      }
+    }
+    a {
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-color: #999;
+      transition: background-color .2s;
+      cursor: pointer;
+      text-indent: 100%;
+      &.twitter {
+        background-color: desaturate(#1da1f2, 50%);
+        &:hover { background-color: #1da1f2 };
+      }
+      &.facebook {
+        background-color: desaturate(#3b5998, 50%);
+        &:hover { background-color: #3b5998 };
+      }
+      &.pocket {
+        background-color: desaturate(#ee4056, 50%);
+        &:hover { background-color: #ee4056 };
+      }
+      &.instapaper {
+        background-color: desaturate(#000000, 50%);
+        &:hover { background-color: #000000 };
+      }
+      .icon-wrapper {
+        display: block;
+        padding: 8px 0;
+      }
+      svg {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
 }
 
 .VHS{
@@ -1490,41 +1561,6 @@ a.button.pink:hover {
   zoom: 1;
 }
 
-.socials {
-  text-align: center;
-}
-
-a.social {
-  display: inline-block;
-  position: relative;
-  width: 22px;
-  height: 22px;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  transition: opacity 0.5s ease-in;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
-  text-indent: -9999em;
-  color: transparent !important;
-  font-size: 1px;
-  line-height: 22px;
-  border: none !important;
-}
-
-a.social:hover {
-  transition: opacity 0.25s ease-in;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
-}
-
-a.social:first-of-type {
-  margin-left: 0;
-}
-
-a.social.first {
-  margin-left: 0;
-}
-
 @import 'icons.less';
 
 .mt-insert,
@@ -1714,6 +1750,7 @@ a.social.first {
   .main .post-inner {
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .post-navigation .previous-post-link,
@@ -1933,4 +1970,13 @@ ul.cycling-topics {
     margin: 0;
     padding: 0;
   }
+}
+
+.visually-hidden {
+  pointer-events: none;
+  position: absolute;
+  clip: rect(1px,1px,1px,1px);
+  padding: 0;
+  border: 0;
+  overflow: hidden;
 }
