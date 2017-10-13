@@ -5,7 +5,7 @@
     {{! The tag below includes the post loop - partials/loop.hbs }}
 <section class="main main-archive">
 {{#author}}
-    <article class="result author-enhanced {{#if cover}} cover-image-present{{/if}}" {{#if cover}} style="background-image: url({{cover}});"{{/if}}>
+    <article class="result author-enhanced {{#if cover_image}} cover-image-present{{/if}}" {{#if cover_image}} style="background-image: url({{cover_image}});"{{/if}}>
 			<div class="inner post-inner">
         <span class="author-avatar"><img alt="" src="{{image}}"></span>
 				<h1 class="searching glitch" data-text="{{{title}}}">{{name}}</h1>
