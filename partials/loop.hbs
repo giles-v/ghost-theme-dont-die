@@ -4,16 +4,10 @@
 
 <article class="{{post_class}}">
 
-  {{#if image}}
+  {{#if feature_image}}
 
     <a class="featured-image" href="{{url}}" title="{{title}}">
-      <img src="{{image}}" alt="{{title}}" />
-    </a>
-
-  {{else}}
-
-    <a class="featured-image" href="{{url}}">
-      {{content words="0"}}
+      <img src="{{feature_image}}" alt="{{title}}" />
     </a>
 
   {{/if}}
@@ -37,7 +31,7 @@
 
         	    <ul class="meta">
         		    <li class="author-meta post-tags">
-                  
+
         		  </li>
         	  </ul>
 
