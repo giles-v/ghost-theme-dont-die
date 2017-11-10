@@ -258,13 +258,6 @@ jQuery.noConflict();
 			var isiPad = navigator.userAgent.match(/iPad/i);
 			var isiPhone = navigator.userAgent.match(/iPhone/i);
 
-			// Theme Set vars
-			// Check for IE9 var and add a html class
-
-			if ( ie9 ) {
-				$('html').addClass('ie9');
-			}
-
 			if ( !$('body').is('draw-open') ) {
 
 				var fadeHeaders = false;

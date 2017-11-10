@@ -62,16 +62,8 @@
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
 
-    {{! The main JavaScript file for Casper }}
-    <script> var ie9 = false; </script>
-    <!--[if lte IE 9 ]>
-    <script> var ie9 = true; </script>
-    <![endif]-->
-
-    <script type="text/javascript" src="{{asset "js/plugins/global-plugins.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/plugins/plugins.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
-
-
 
 </body>
 </html>
