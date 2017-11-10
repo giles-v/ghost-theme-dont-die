@@ -480,6 +480,9 @@ jQuery.noConflict();
 
 				}
 
+				$("#search-field").ghostHunter({
+					results: "#search-results"
+				});
 
 				$(".social-share a").click(function(event) {
 					var el = $(this);

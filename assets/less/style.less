@@ -239,31 +239,48 @@ header.header .logo-wrap .logo a {
 header.header .logo-wrap .logo.logo-left {
   text-align: left;
 }
+header.header .top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+}
 header.header .logo-wrap .logo.plain a:hover {
   background: #1e2526;
 }
 header.header .logo-wrap #menu-trigger {
   text-decoration: none;
-  position: absolute;
-  top: 25px;
-  right: 20px;
-  height: 26px;
-  width: 56px;
-  display: table-cell;
-  vertical-align: middle;
+  padding: 15px;
+  display: block;
   z-index: 11;
+  transition: opacity .3s;
+  &:hover {
+    opacity: .6;
+  }
+  span {
+    display: none;
+  }
+  svg {
+    display: block;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+  }
 }
-header.header .logo-wrap #menu-trigger span {
-  display: none;
+form#search {
+  display: flex;
+  button {
+    width: 60px;
+    background: lime;
+    border: 0;
+    svg {
+      display: block;
+      margin: 0 auto;
+      width: 25px;
+      height: 25px;
+    }
+  }
 }
-header.header .logo-wrap #menu-trigger svg {
-  height: 30px;
-  width: 30px;
-  padding: 5px;
-  margin-top: 5px;
-  margin-left: 10px;
-}
-
 .menu-open #overlay, .drawer-open #overlay {
   -webkit-overflow-scrolling: touch;
 }
