@@ -1,0 +1,95 @@
+.main-header {
+  position: absolute;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  > * {
+    position: absolute;
+    top: 0;
+    padding: 30px;
+  }
+
+  button {
+    .chromeless-button();
+  }
+}
+
+.main-header__logo {
+  left: 0;
+  display: block;
+
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.main-header__toggle {
+  right: 0;
+  display: block;
+  z-index: 2;
+
+  svg {
+    height: 30px;
+    width: 30px;
+    fill: #fff;
+  }
+}
+
+.main-header__menu {
+  left: 100%;
+  transition: transform .2s ease-out;
+  padding: 150px 0 0;
+  background-image: url(../img/rashes.png);
+
+  a,
+  button {
+    display: block;
+    color: #fff;
+    padding: 10px 40px 10px 10px;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    font-size: 1.4em;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+
+    &:hover {
+      color: #333;
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+
+  .light {
+    display: none;
+  }
+}
+
+.main-header__overlay {
+  position: fixed;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,.7);
+  transition: transform .2s ease-out;
+}
+
+.menu-open {
+  .main-header__menu,
+  .main-header__overlay {
+    transform: translateX(-100%);
+  }
+}
+
+.color-mode-dark {
+  .main-header__menu {
+    .light {
+      display: block;
+    }
+    .dark {
+      display: none;
+    }
+  }
+}

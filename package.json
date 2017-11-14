@@ -16,13 +16,15 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:css": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css"
+    "build:css": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css",
+    "lint:less": "lesshint assets/less/"
   },
   "config": {
     "posts_per_page": 10
   },
   "devDependencies": {
     "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1"
+    "less-plugin-clean-css": "^1.5.1",
+    "lesshint": "^4.4.0"
   }
 }

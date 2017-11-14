@@ -11,11 +11,11 @@ a.more-link:hover {
   opacity: 1 !important;
 }
 
-#menu-trigger svg#menu-icon {
+.menu-toggle svg#menu-icon {
   fill: @white;
 }
 
-.tag-template #menu-trigger svg#menu-icon, .author-template #menu-trigger svg#menu-icon, .search #menu-trigger svg#menu-icon, .sans-image #menu-trigger svg#menu-icon {
+.tag-template .menu-toggle svg#menu-icon, .author-template .menu-toggle svg#menu-icon, .search .menu-toggle svg#menu-icon, .sans-image .menu-toggle svg#menu-icon {
   fill: @offblack;
 }
 
@@ -23,7 +23,7 @@ a.more-link:hover {
   fill: @offblack;
 }
 
-#menu-trigger.active:hover:before, #menu-trigger.active:hover:after, #menu-trigger.active:hover span:before {
+.menu-toggle.active:hover:before, .menu-toggle.active:hover:after, .menu-toggle.active:hover span:before {
   opacity: .7;
 }
 
@@ -50,10 +50,6 @@ body, .author-enhanced a, .author-enhanced .fa, .main article.result a {
 a, .comment-reply-link:hover, button:hover, input[type="submit"]:hover,
 .author-wrap h6 a:hover, .widgets a:hover, .comment-body .url:hover, .comment-moderation {
   color: #ff423b;
-}
-
-.main-archive .result.author-enhanced, .main-archive .result.author-enhanced .meta, .meta, .meta a, .comment-date, .author-wrap h6 span, footer a, .pagination a, .widgets, .widgets .tagcloud a, .widgets .header-widgets .tagcloud a {
-  color: #8c8c8c;
 }
 
 .author-wrap h6 a, footer a:hover, .widgets a, .widgets .tagcloud a:hover, .main-archive article.no-image:nth-of-type(2n) *, article.no-image:nth-of-type(2n) a,
@@ -97,10 +93,6 @@ a, .comment-reply-link:hover, button:hover, input[type="submit"]:hover,
 
 .meta .share-on .googleplus {
   color: #c63d2d;
-}
-
-a:hover, #comments {
-  color: #3d4247;
 }
 
 /* Border Colours */

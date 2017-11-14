@@ -316,41 +316,16 @@ jQuery.noConflict();
 				});
 			}
 
-
+			$('.main-header__toggle, .main-header__overlay').on('click', function (e) {
+				e.preventDefault();
+				$('body').toggleClass('menu-open');
+			});
 
 			// FitText
-			$("h1, .main-archive h2").fitText( 0.79, { minFontSize: '27px', maxFontSize: '75px' } );
-
-
-				// Overlay menu area
-				var menuClicked = false;
-				$('.menu-default #overlay').addClass('hide');
-				$('.menu-default #menu-trigger').on( 'click' , function (e) {
-
-					e.preventDefault();
-
-					$('body').toggleClass('menu-open');
-					$(this).toggleClass('active');
-
-					if ( menuClicked === false ) {
-
-						$('#overlay').fadeIn(300);
-						$('header.header').toggleClass('active');
-
-						menuClicked = true;
-
-					} else {
-
-						$('#overlay').fadeOut(300);
-						$('header.header').toggleClass('active');
-
-						menuClicked = false;
-
-					}
-
-				});
-
-
+			$("h1, .main-archive h2").fitText(
+				0.79,
+				{ minFontSize: '27px', maxFontSize: '75px' }
+			);
 
 				// Drawer navigation
 				if ( $('html').is('.menu-drawer') ) {

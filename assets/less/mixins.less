@@ -1,0 +1,13 @@
+.chromeless-button() {
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+  touch-action: manipulation; // to disable tap-to-zoom, to speed up tap-to-click
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
