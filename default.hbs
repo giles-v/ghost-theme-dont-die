@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html class="menu-drawer header-off fixed-height">
 <head>
-    {{! Document Settings }}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    {{! Page Meta }}
-    <title>{{#if author}}{{{author.name}}}:{{/if}} {{#if post.title}}{{{post.title}}} - {{/if}} {{{@blog.title}}}</title>
-
+    <title>{{#if author}}{{{author.name}}}: {{/if}}{{#if post.title}}{{{post.title}}} - {{/if}}{{{@blog.title}}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="{{asset "img/favicon.ico"}}">
-
     {{! Styles'n'Scripts }}
 
     {{>fonts }}
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/manifest.json">
+    <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <meta name="msapplication-config" content="/assets/img/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
     {{! Ghost outputs important style and meta data with this tag }}
