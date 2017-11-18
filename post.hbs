@@ -9,27 +9,18 @@
     {{#post}}
 
     <div class="post-top">
-      {{#if feature_image}}
-        <span class="featured-image"><img src="{{feature_image}}" alt="{{title}}" /></span>
-      {{/if}}
+      <div class="post-header">
+        {{#if feature_image}}
+          <img class="featured-image" src="{{feature_image}}" alt="{{title}}" />
+        {{/if}}
 
-      <div class="post-align post-header">
         <div class="post-header-inner">
-          <ul class="meta top">
-            <li class="time">
-              <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">
-                {{date format="MMMM DD, YYYY"}}
-              </time>
-            </li>
-          </ul>
-
-          <h1 class="entry-title post-title font-effect-anaglyph" data-text="{{{title}}}">
+          <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">
+            {{date format="MMMM DD, YYYY"}}
+          </time>
+          <h2 class="post-title entry-title">
             {{title}}
-          </h1>
-
-          <ul class="meta">
-            <li class="author-meta post-tags"></li>
-          </ul>
+          </h2>
         </div><!-- /post-header-inner -->
       </div><!-- /post-header -->
     </div><!-- /post-top -->
@@ -43,12 +34,8 @@
         {{content}}
       </div>
 
-      <a class="bug" href="{{@blog.url}}">
-        <img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
-      </a>
+      <img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
     </div> <!-- post-inner -->
-
-
 
     {{/post}}
   </article>

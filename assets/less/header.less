@@ -1,9 +1,8 @@
 .main-header {
   position: absolute;
   z-index: 5;
-  height: 100vh;
+  height: ~"calc(100vw * 9 / 16)";
   width: 100%;
-  overflow: hidden;
 
   > * {
     position: absolute;
@@ -19,6 +18,10 @@
 .main-header__logo {
   left: 0;
   display: block;
+
+  @media @mobile {
+    padding: 20px;
+  }
 
   img {
     width: 80px;
@@ -42,7 +45,12 @@
   left: 100%;
   transition: transform .2s ease-out;
   padding: 150px 0 0;
+  min-height: 100vh;
   background-image: url(../img/rashes.png);
+
+  @media @mobile {
+    width: 100vw;
+  }
 
   a,
   button {
