@@ -5,6 +5,7 @@
   position: relative;
   background: @black;
   height: ~"calc(100vw * 9 / 16)";
+  max-height: 80vh;
   .font-smoothed();
 }
 
@@ -36,6 +37,8 @@
 }
 
 .post-inner {
+  .center-column();
+
   .content {
     padding: @spacing;
   }
@@ -51,10 +54,7 @@
     position: relative;
 
     img {
-      display: block;
-      position: relative;
-      left: -@spacing;
-      width: 100vw;
+      .fullwidth-break-center-column();
       height: auto;
     }
 
