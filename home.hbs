@@ -1,23 +1,40 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
+<section class="main-content main-content__home">
 
-<section class="main main-archive">
+  <div class="featured-header">
+    {{#if @blog.cover_image}}
+      <img class="featured-image" src="{{@blog.cover_image}}" role="presentation" alt="" />
+    {{/if}}
 
+    <div class="header-inner home-header-inner">
+      <h1>{{@blog.title}}</h1>
 
-  <article class="home-article with-image" {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}})"{{/if}}>
-   <div class="home-inner">
-     <div class="inner">
-         {{>homehero}}
-       </div>
-     <a class="more-arrow" href="#content"><svg id="more-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="-123.5 142.8 842.2 556.4" enable-background="new -123.5 142.8 842.2 556.4"><path d="M162.7 564.1l420.9-420.9 135 135-420.9 421-135-135.1zm-286.2-286.2l135-135 420.9 420.9-135 135-420.9-420.9z"/></svg><span>Scroll Down<span></a>
-   </div>
-  </article>
+      <div class="description">
+        An interview series about
+        <ul class="cycling-topics">
+          <li class="visible">surviving videogames</li>
+          <li>consumer culture</li>
+          <li>social media</li>
+          <li>the internet</li>
+          <li>media apathy</li>
+        </ul>
+      </div>
 
+      <p>
+        New interviews every other friday
+      </p>
 
-    {{! The main content area on the homepage }}
-    {{! The tag below includes the post loop - partials/loop.hbs }}
+      <p class="patreon">
+        <a href="https://www.patreon.com/davidwolinsky" target="_blank" rel="noopener">
+          Support Via Patreon
+        </a>
+      </p>
+    </div>
+  </div>
 
-
+  <div class="archive-loop">
     {{> "loop"}}
-    </section>
+  </div>
+
+</section>

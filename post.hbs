@@ -3,39 +3,46 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-<section class="main-content">
+<section class="main-content main-content__post">
   <article class="{{post_class}}">
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
-    <div class="post-top">
-      <div class="post-header">
-        {{#if feature_image}}
-          <img class="featured-image" src="{{feature_image}}" alt="{{title}}" />
-        {{/if}}
+    <div class="featured-header">
+      {{#if feature_image}}
+        <img class="featured-image" src="{{feature_image}}" alt="{{title}}" />
+      {{/if}}
 
-        <div class="post-header-inner">
-          <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">
-            {{date format="MMMM DD, YYYY"}}
-          </time>
-          <h2 class="post-title entry-title">
-            {{title}}
-          </h2>
-        </div><!-- /post-header-inner -->
-      </div><!-- /post-header -->
-    </div><!-- /post-top -->
+      <div class="header-inner post-header-inner">
+        <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">
+          {{date format="MMMM DD, YYYY"}}
+        </time>
+        <h1 class="post-title entry-title">
+          {{title}}
+        </h1>
+      </div>
+    </div>
 
     <div class="inner post-inner">
-      <div class="post-after-header">
-        {{>post-social-share}}
+      {{>post-social-share}}
+
+      <div class="content" id="truncated-content">
+        {{content words="100"}}
       </div>
 
-      <div class="content">
+      <noscript id="full-content">
         {{content}}
-      </div>
+      </noscript>
+      <script>
+        const fullHTML = document.getElementById('full-content').textContent;
+        const llImgHTML = fullHTML
+              .replace(/<img(.*?) srcset="/gi, '<img$1 data-srcset="')
+              .replace(/<img(.*?) src="/gi, '<img$1 data-src="');
+        document.getElementById('truncated-content').innerHTML = llImgHTML;
+      </script>
 
       <img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
-    </div> <!-- post-inner -->
+    </div>
 
     {{/post}}
   </article>

@@ -1,49 +1,29 @@
 @import 'variables';
 @import 'mixins';
 
-.post-header {
-  position: relative;
-  background: @black;
-  height: ~"calc(100vw * 9 / 16)";
-  max-height: 80vh;
-  .font-smoothed();
-}
-
-.featured-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: .5;
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .post-header-inner {
-  position: absolute;
   left: 0;
   bottom: 0;
   padding: @spacing;
-
-  time,
-  h2 {
-    margin: 0;
-    line-height: 1;
-    color: @white;
-  }
-
-  h2 {
-    .rgb-shift();
-    font-size: 8vw;
-  }
+  color: @white;
 }
 
 .post-inner {
-  .center-column();
+  .center-column(2 * @spacing);
 
   .content {
-    padding: @spacing;
+    padding: 0 @spacing;
   }
 
+  h2,
   h5 {
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: none;
     margin: 1em 0;
     font-style: italic;
     font-size: 1.3em;
@@ -55,18 +35,19 @@
 
     img {
       .fullwidth-break-center-column();
+      .pixel-art-scaling();
       height: auto;
     }
+  }
 
-    .wp-caption-text {
-      /* something? */
-    }
+  a {
+    color: @color-deepred;
   }
 }
 
 .bug {
   display: block;
-  margin: 0 auto @spacing;
+  margin: 2 * @spacing auto @spacing;
   width: 50px;
   height: auto;
 }

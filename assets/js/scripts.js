@@ -57,11 +57,11 @@ $(document).ready(function() {
 
 	$(".format-video").fitVids();
 
-
+  var myLazyLoad = new LazyLoad();
 
 	$(".social-share a").click(function(event) {
 		var el = $(this);
-		PopupCenter(el.attr("href"), el.find(".visually-hidden").text(), 600, 300);
+		PopupCenter(el.attr("href"), el.find(".screen-reader-text").text(), 600, 300);
 		event.preventDefault();
 	});
 
