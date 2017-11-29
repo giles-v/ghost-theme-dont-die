@@ -1,0 +1,11 @@
+{
+  "decimalZero": {
+    "style": "none"
+  },
+  "propertyOrdering": {
+    "enabled": false
+  },
+  "zeroUnit": {
+    "style": "no_unit"
+  }
+}

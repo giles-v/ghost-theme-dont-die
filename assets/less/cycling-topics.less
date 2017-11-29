@@ -1,34 +1,40 @@
-.description {
-  &::after {
-    content: '\2588';
-    display: inline-block;
-    transform: translateX(-.2em) scaleX(.5);
-    transform-origin: 0 0;
-    animation: 1s blink step-end infinite;
-  }
-}
-
-ul.cycling-topics {
+.cycling-topics {
+  position: relative;
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 0;
 
+  @media @mobile {
+    display: block;
+  }
+
+  &::after {
+    content: '\2588';
+    display: inline-block;
+    transform: translate(-.05em, -.05em) scale(.5, .9);
+    transform-origin: 0 0;
+    animation: 1s blink step-end infinite;
+  }
+
   li {
     margin: 0;
     padding: 0;
     display: none;
-    &.visible {
-      display: block;
-    }
+  }
+
+  .visible {
+    display: inline-block;
   }
 }
 
 @keyframes blink {
-  from, to {
-    color: transparent;
+  from,
+  to {
+    visibility: hidden;
   }
+
   50% {
-    color: white;
+    visibility: visible;
   }
 }

@@ -1,0 +1,53 @@
+.center-column(@top-bottom-margin: 0) {
+  max-width: @column-width;
+  margin: @top-bottom-margin auto;
+}
+
+/*
+ * This is intended for things which are placed inside center-column, but need
+ * to expand to the full width of the screen.
+ */
+.fullwidth-break-center-column() {
+  position: relative;
+  display: block;
+  width: 100vw;
+  left: ~'calc(-@{spacing} - (100vw - @{column-width}) / 2)';
+
+  @media (max-width: @column-width) {
+    left: -@spacing;
+  }
+}
+
+.pixel-art-scaling() {
+  image-rendering: optimizeSpeed;             /* Legal fallback */
+  image-rendering: -moz-crisp-edges;          /* Firefox        */
+  image-rendering: -o-crisp-edges;            /* Opera          */
+  image-rendering: -webkit-optimize-contrast; /* Safari         */
+  image-rendering: optimize-contrast;         /* CSS3 Proposed  */
+  image-rendering: crisp-edges;               /* CSS4 Proposed  */
+  image-rendering: pixelated;                 /* CSS4 Proposed  */
+  -ms-interpolation-mode: nearest-neighbor;   /* IE8+           */
+}
+
+.chromeless-button() {
+  background: transparent;
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+  touch-action: manipulation; // to disable tap-to-zoom, to speed up tap-to-click
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.rgb-shift(@degree) {
+  text-shadow: ~'-.0@{degree}em 0 red, .0@{degree}em 0 cyan;';
+}
+
+.font-smoothed() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

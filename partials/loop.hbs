@@ -1,50 +1,23 @@
-{{! This is the post loop - each post will be output using this markup }}
-<div id="content">
-{{#foreach posts}}
-
-<article class="{{post_class}}">
-
-  {{#if feature_image}}
-
-    <a class="featured-image" href="{{url}}" title="{{title}}">
-      <img src="{{feature_image}}" alt="{{title}}" />
-    </a>
-
-  {{/if}}
-
-		<div class="post-wrapper">
-
-		  <div class="inner post-inner">
-        <ul class="meta top">
-		      <li class="time">
-			      <a href="{{url}}" title="Big Sur"><time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</a>
-          </li>
-        </ul>
-
-  			<h2 class="post-title entry-title font-effect-anaglyph">
-  				<a href="{{url}}">{{{title}}}</a>
-  			</h2>
-
-  		  <div class="excerpt">
-
-        		  <p></p>
-
-        	    <ul class="meta">
-        		    <li class="author-meta post-tags">
-
-        		  </li>
-        	  </ul>
-
-            <p><a href="{{url}}" class="more-link">Now</a></p>
-        </div><!-- /excerpt -->
-  	</div><!-- / post-wrapper -->
-  </div><!-- / inner.post-inner -->
-
-<span class="star"></span>
-</article>
-
-{{/foreach}}
+<div class="post-list">
+  {{#foreach posts}}
+  <article class="post-list__post">
+    <a href="{{ url }}" title="{{ title }}">
+      {{#if feature_image}}
+        {{#has number="1, 2"}}
+          <img class="post-list__image" src="{{feature_image}}" alt="" />
+        {{else}}
+          <img class="post-list__image" data-src="{{feature_image}}" alt="" />
+        {{/has}}
+      {{/if}}
+      <div class="post-list__text">
+        <p class="post-list__time">
+          <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        </p>
+  			<h2 class="post-list__post-title">{{ title }}</h2>
+      </div>
+  	</a>
+  </article>
+  {{/foreach}}
 </div>
 
-{{! Previous/next page links - displayed on every page }}
 {{pagination}}

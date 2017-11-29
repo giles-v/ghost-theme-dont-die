@@ -1,0 +1,137 @@
+.main-header {
+  position: absolute;
+  z-index: 5;
+  height: 130px;
+  width: 100%;
+
+  > * {
+    position: absolute;
+    top: 0;
+    padding: 30px;
+  }
+
+  button {
+    .chromeless-button();
+  }
+}
+
+.main-header__logo {
+  left: 0;
+  display: block;
+
+  @media @mobile {
+    padding: 20px;
+  }
+
+  img {
+    width: 15vw;
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+.main-header__toggle {
+  right: 0;
+  display: block;
+  z-index: 2;
+
+  svg {
+    display: block;
+    height: 30px;
+    width: 30px;
+    fill: @white;
+  }
+}
+
+.main-header__menu {
+  position: fixed;
+  left: 100%;
+  transition: transform .2s ease-out;
+  padding: 100px 0 0;
+  min-height: 100vh;
+  background-image: url('/assets/img/rashes.png');
+
+  @media @mobile {
+    width: 100vw;
+  }
+
+  a,
+  button {
+    display: block;
+    color: @white;
+    padding: 10px 40px 10px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    font-size: 1.4em;
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+
+    &:hover {
+      color: @color-charcoal;
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+
+  .light {
+    display: none;
+  }
+}
+
+.main-header__overlay {
+  position: fixed;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, .7);
+  transition: transform .2s ease-out;
+}
+
+.menu-open {
+  .main-header__menu,
+  .main-header__overlay {
+    transform: translateX(-100%);
+  }
+
+  .main-header {
+    height: ~'calc(100vw * 9 / 16)';
+  }
+}
+
+.featured-header {
+  position: relative;
+  background: @black;
+  color: @white;
+  height: ~'calc(100vw * 9 / 16)';
+  max-height: 80vh;
+  .font-smoothed();
+
+  @media @mobile {
+    height: 100vw;
+  }
+}
+
+.featured-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .5;
+}
+
+.header-inner {
+  position: absolute;
+  width: 100%;
+}
+
+.color-mode-dark {
+  .main-header__menu {
+    .light {
+      display: block;
+    }
+
+    .dark {
+      display: none;
+    }
+  }
+}

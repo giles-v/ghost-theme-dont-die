@@ -1,0 +1,53 @@
+@import 'variables';
+@import 'mixins';
+
+blockquote {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.post-header-inner {
+  left: 0;
+  bottom: 0;
+  padding: @spacing;
+  color: @white;
+}
+
+.post-inner {
+  .center-column(2 * @spacing);
+
+  .content {
+    padding: 0 @spacing;
+  }
+
+  h2,
+  h5 {
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: none;
+    margin: 1em 0;
+    font-style: italic;
+    font-size: 1.3em;
+    text-align: right;
+  }
+
+  p {
+    position: relative;
+
+    img {
+      .fullwidth-break-center-column();
+      .pixel-art-scaling();
+      height: auto;
+    }
+  }
+
+  a {
+    color: @color-deepred;
+  }
+}
+
+.bug {
+  display: block;
+  margin: 2 * @spacing auto @spacing;
+  width: 50px;
+  height: auto;
+}

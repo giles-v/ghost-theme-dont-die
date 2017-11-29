@@ -1,0 +1,35 @@
+.home-header-inner {
+  .rgb-shift(6);
+
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+
+  div,
+  p {
+    .font-smoothed();
+
+    text-transform: lowercase;
+    margin: .5em 0 0;
+  }
+}
+
+.description {
+  margin: 1em 0 0;
+}
+
+.patreon {
+  a {
+    color: @white;
+    background-color: @black;
+    display: inline-block;
+    padding: .2em .4em;
+
+    &:hover {
+      background-color: @white;
+      color: @black;
+    }
+  }
+}
+
+@import 'cycling-topics';

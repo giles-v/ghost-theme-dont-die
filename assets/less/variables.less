@@ -1,23 +1,24 @@
-@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)";
+@mobile: ~'(max-width:599px)';
+@desktop: ~'(min-width:600px)';
+@widescreen: ~'(min-width:1600px)';
+@highdensity: ~'(min-resolution: 192dpi), (min-resolution: 2dppx)';
 
-// colours
-@default                : #393a3a;
+@column-width: 760px;
+@spacing: 20px;
+
 @black                  : #000;
+@grey-medium            : #999;
 @white                  : #fff;
-@accent                 : #ff423b;
-@accenthover            : #3d4247;
-
 @offblack               : #060b0e;
 @offwhite               : #fdfdfd;
-@justgrey               : #f9f9f9;
-@lightgrey              : #e5e5e5;
-@selectgrey             : #f5f5f5;
-@linegrey               : #f5f5f5;
-@grey                   : #8c8c8c;
-@altgrey                : #767c7e;
 @offgrey                : #404b4c;
-@offred                 : #e05555;
-@deepred                : #a73b3b;
-@charcoal               : #1e2526;
-@socialgrey             : #a0abae;
-@footergrey             : #939fa2;
+@color-softgrey         : #a6a6a6;
+@color-graphite         : #8c8c8c;
+@color-charcoal         : #393a3a;
+@color-deepred          : #d00;
+
+@color-twitter-blue     : #1da1f2;
+@color-facebook-blue    : #3b5998;
+@color-gplus-red        : #c63d2d;
+@color-pinterest-red    : #cb2027;
+@color-pocket-red       : #ee4056;

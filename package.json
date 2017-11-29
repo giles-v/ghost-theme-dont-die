@@ -1,7 +1,7 @@
 {
   "name": "dont-die",
   "description": "A Ghost theme for nodontdie.com",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "homepage": "https://www.nodontdie.com",
   "repository": {
     "type": "git",
@@ -16,13 +16,19 @@
   },
   "license": "MIT",
   "scripts": {
-    "build:css": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css"
+    "build:js:head": "uglifyjs assets/js/head.js -c -m -o partials/head-inline-scripts.hbs",
+    "build:css": "npm run compile:css && npm run inline:css",
+    "compile:css": "lessc assets/less/style.less --clean-css=\"--s1\" --source-map=assets/css/style.css.map assets/css/style.css",
+    "inline:css": "cp assets/css/style.css partials/head-inline-style.hbs",
+    "lint:less": "lesshint assets/less/"
   },
   "config": {
-    "posts_per_page": 10
+    "posts_per_page": 250
   },
   "devDependencies": {
     "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1"
+    "less-plugin-clean-css": "^1.5.1",
+    "lesshint": "^4.4.0",
+    "uglify-js": "^3.2.0"
   }
 }
