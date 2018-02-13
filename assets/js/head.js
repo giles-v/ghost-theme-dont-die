@@ -30,3 +30,10 @@ var colorMode = (function() {
     toggle: toggle
   };
 })();
+
+document.addEventListener('DOMContentLoaded', function(e) {
+  if (window.innerWidth > 599) return;
+  var nav = document.querySelector('.main-header__menu');
+  var homeNav = document.querySelector('.home-header-inner');
+  if (nav && homeNav) homeNav.appendChild(nav);
+});
